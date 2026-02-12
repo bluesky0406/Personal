@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>云南春节躺平指南 2026</title>
+    <!-- NO MERMAID JS AND NO SVG WERE USED IN THIS OUTPUT -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: #F7FFF7;
+            color: #292F36;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 500px;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FF6B6B;
+            border-radius: 4px;
+        }
+        .palette-coral { color: #FF6B6B; }
+        .bg-palette-coral { background-color: #FF6B6B; }
+        .palette-teal { color: #4ECDC4; }
+        .bg-palette-teal { background-color: #4ECDC4; }
+        .palette-yellow { color: #FFE66D; }
+        .bg-palette-yellow { background-color: #FFE66D; }
+        .palette-dark { color: #292F36; }
+        .bg-palette-dark { background-color: #292F36; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-palette-dark text-white py-12 px-4 shadow-lg">
+        <div class="max-w-6xl mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-black mb-4 tracking-tight">🏔️ 滇西 6 人行</h1>
+            <h2 class="text-2xl md:text-3xl font-light text-gray-300">2026 春节躺平指南 (The Chill Guide)</h2>
+            <p class="mt-6 text-lg max-w-2xl mx-auto text-gray-400">
+                有大方向，无 KPI，主打听劝。芒市吃、瑞丽玩、腾冲泡。
+            </p>
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <span class="bg-palette-coral text-white px-4 py-2 rounded-full font-bold shadow">6 人小队</span>
+                <span class="bg-palette-teal text-white px-4 py-2 rounded-full font-bold shadow">6 天 5 晚</span>
+                <span class="bg-palette-yellow text-gray-800 px-4 py-2 rounded-full font-bold shadow">双车自驾</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 gap-16">
+
+        <section>
+            <div class="mb-8 border-l-8 border-palette-teal pl-6">
+                <h3 class="text-3xl font-bold mb-2">🗺️ 总体规划时间轴</h3>
+                <p class="text-lg text-gray-600">全局视角：航班起降、双车调度与各城市停留时间分布。</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl p-4 md:p-8">
+                <div class="chart-container h-[500px]">
+                    <canvas id="logisticsChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="mb-12 text-center">
+                <h3 class="text-4xl font-bold mb-4">🌊 行程流动 (The Flow)</h3>
+                <p class="text-xl text-gray-600">模糊时间边界，只关注此时此刻的体验与必要的路程节点。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                
+                <div class="card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-palette-dark text-white p-4 flex justify-between items-center">
+                        <h5 class="font-bold text-lg">Day 1 (2.17)</h5>
+                        <span class="text-sm opacity-75">芒市 · 集结</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4 bg-gray-50 p-4 rounded-lg border border-gray-100">
+                            <p class="font-bold text-gray-800 text-lg mb-1">🏨 芒市枕晴山观景美宿</p>
+                            <p class="text-xs text-gray-500 mb-2">📍 环城东路36号宏美家园D21幢</p>
+                            <p class="text-sm text-gray-700 bg-white inline-block px-2 py-1 rounded border">🛏️ 3间 大床房</p>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <div class="bg-gray-100 p-2 rounded-lg text-2xl mr-4">🛬</div>
+                            <div>
+                                <p class="font-bold text-gray-800">落地安顿</p>
+                                <p class="text-sm text-gray-500">上海组 15:30 / 北京组 23:00</p>
+                                <p class="text-xs text-palette-coral font-bold mt-1">🚗 机场 ➔ 酒店 (约25分钟)</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-gray-100 p-2 rounded-lg text-2xl mr-4">🍗</div>
+                            <div>
+                                <p class="font-bold text-gray-800">接风晚宴</p>
+                                <p class="text-sm text-gray-500">孔雀宴 / 傣味烧烤</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-palette-coral text-white p-4 flex justify-between items-center">
+                        <h5 class="font-bold text-lg">Day 2 (2.18)</h5>
+                        <span class="text-sm opacity-90">芒市 · 漫游</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 rounded-full bg-palette-coral mr-3"></span>
+                            <p class="text-gray-700">📸 <strong>大金塔 & 银塔</strong> (上午光线好)</p>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 rounded-full bg-palette-coral mr-3"></span>
+                            <p class="text-gray-700">🦚 <strong>勐巴娜西珍奇园</strong> 看孔雀</p>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 rounded-full bg-palette-coral mr-3"></span>
+                            <p class="text-gray-700">☕ <strong>新玩厂</strong> 喝牛油果咖啡</p>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 rounded-full bg-palette-coral mr-3"></span>
+                            <p class="text-gray-700">🍢 <strong>百思特美食城</strong> 扫街</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-xl shadow-lg overflow-hidden border-2 border-palette-teal">
+                    <div class="bg-white text-palette-teal p-4 flex justify-between items-center border-b border-gray-100">
+                        <h5 class="font-bold text-lg">Day 3 (2.19)</h5>
+                        <span class="text-sm font-semibold">芒市 ➔ 瑞丽</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4 bg-palette-teal/10 p-4 rounded-lg border border-palette-teal/20">
+                            <p class="font-bold text-gray-800 text-lg mb-1">🏨 瑞丽凯里亚德温泉度假酒店</p>
+                            <p class="text-xs text-gray-500 mb-2">📍 瑞丽姐岗路78号</p>
+                            <p class="text-sm text-gray-700 bg-white inline-block px-2 py-1 rounded border">🛏️ 3间 轻享智能大床房</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-3 mb-4">
+                            <p class="text-sm font-bold text-palette-teal">🚙 关键节点：13:30 提车出发</p>
+                            <p class="text-xs font-bold text-palette-coral mt-1">🚗 芒市酒店 ➔ 瑞丽酒店 (约1小时20分钟)</p>
+                        </div>
+                        <ul class="space-y-3 text-gray-700">
+                            <li>🌏 <strong>一寨两国</strong> 荡秋千出国</li>
+                            <li>♨️ 入住酒店<strong>私享温泉</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-palette-teal text-white p-4 flex justify-between items-center">
+                        <h5 class="font-bold text-lg">Day 4 (2.20)</h5>
+                        <span class="text-sm opacity-90">瑞丽 ➔ 腾冲</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4 bg-gray-50 p-4 rounded-lg border border-gray-100">
+                            <p class="font-bold text-gray-800 text-lg mb-1">🏨 悦兮·山樱里温泉别墅</p>
+                            <p class="text-xs text-gray-500 mb-2">📍 腾冲高黎贡小区江山小院76栋</p>
+                            <p class="text-sm text-gray-700 bg-white inline-block px-2 py-1 rounded border">🛏️ 3室1厅包栋别墅 (含私汤)</p>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="bg-gray-100 p-2 rounded-lg text-2xl mr-4">🌉</div>
+                                <div>
+                                    <p class="font-bold text-gray-800">龙江大桥</p>
+                                    <p class="text-xs text-palette-coral font-bold mt-1">🚗 瑞丽 ➔ 腾冲 (200公里，约2.5小时)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-gray-100 p-2 rounded-lg text-2xl mr-4">🍵</div>
+                                <div>
+                                    <p class="font-bold text-gray-800">抵达别墅</p>
+                                    <p class="text-sm text-gray-500">私汤煮茶，全员躺平</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-palette-yellow text-gray-800 p-4 flex justify-between items-center">
+                        <h5 class="font-bold text-lg">Day 5 (2.21)</h5>
+                        <span class="text-sm font-semibold">腾冲 · 深度</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 rounded-full bg-palette-yellow mr-3"></span>
+                            <p class="text-gray-700">🥚 <strong>热海大滚锅</strong> 煮鸡蛋 (赶早)</p>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 rounded-full bg-palette-yellow mr-3"></span>
+                            <p class="text-gray-700">🏘️ <strong>和顺古镇</strong> 瞎溜达 (不赶路)</p>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 rounded-full bg-palette-yellow mr-3"></span>
+                            <p class="text-gray-700">🛁 <strong>别墅私汤</strong> 继续泡</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-xl shadow-lg overflow-hidden border-2 border-red-100">
+                    <div class="bg-gray-100 text-gray-800 p-4 flex justify-between items-center">
+                        <h5 class="font-bold text-lg">Day 6 (2.22)</h5>
+                        <span class="text-sm font-semibold">解散 · 返程</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="bg-red-50 rounded-lg p-3 mb-4 border border-red-200">
+                            <p class="text-sm font-bold text-red-600">🕛 12:00 准时退房出发</p>
+                            <p class="text-xs font-bold text-palette-coral mt-1">🚗 酒店 ➔ 腾冲机场 (20公里，约40分钟)</p>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center border-b pb-2">
+                                <span class="font-bold text-palette-teal">👋 上海组 (还 Car B)</span>
+                                <span class="text-sm text-gray-500">14:20 起飞</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-palette-coral">☕ 北京组 (还 Car A)</span>
+                                <span class="text-sm text-gray-500">16:50 起飞</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto w-full">
+            <div class="bg-palette-dark text-white rounded-2xl shadow-2xl p-8">
+                <h3 class="text-2xl font-bold mb-6 flex items-center">
+                    <span class="mr-3">🎒</span> 行前检查清单 (Checklist)
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-3">
+                        <h4 class="text-palette-yellow font-bold mb-2">物资局 (必带)</h4>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-palette-yellow rounded focus:ring-0">
+                            <span>💳 身份证 (边境严查)</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-palette-yellow rounded focus:ring-0">
+                            <span>🚙 驾驶证 (@丹哥 @曹博士)</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-palette-yellow rounded focus:ring-0">
+                            <span>🩱 泳衣 (泡温泉专用)</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-palette-yellow rounded focus:ring-0">
+                            <span>🧥 衣服 (芒市夏装 + 腾冲冬装)</span>
+                        </label>
+                    </div>
+                    <div class="space-y-3">
+                        <h4 class="text-palette-coral font-bold mb-2">行动局 (待办)</h4>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-palette-coral rounded focus:ring-0">
+                            <span>🍗 预订 2.17 接风晚宴 (@Krystal)</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-palette-coral rounded focus:ring-0">
+                            <span>📱 联系车行确认 Day 3 送车 (@曹博士)</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-palette-coral rounded focus:ring-0">
+                            <span>✈️ 留意航班动态，提前值机选座</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="mb-8 border-l-8 border-palette-yellow pl-6">
+                <h3 class="text-3xl font-bold mb-2">📋 附件：票务与车辆明细</h3>
+                <p class="text-lg text-gray-600">所有航班、转机与租车订单的详细预订信息，方便随时核对查阅。</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Flights Card -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 border-t-4 border-palette-coral">
+                    <h4 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✈️</span> 航班信息</h4>
+                    
+                    <!-- Shanghai Group -->
+                    <div class="mb-6">
+                        <h5 class="text-lg font-bold text-palette-dark bg-gray-100 inline-block px-3 py-1 rounded mb-3">上海组 (4人)</h5>
+                        <div class="space-y-3 text-sm text-gray-700">
+                            <div class="p-3 bg-red-50 rounded-lg border border-red-100">
+                                <p class="font-bold text-red-600 mb-1">【去程】2月17日 (直飞)</p>
+                                <p>东方航空 MU7628 | 11:05 浦东T1 ➔ 15:30 芒市</p>
+                            </div>
+                            <div class="p-3 bg-red-50 rounded-lg border border-red-100">
+                                <p class="font-bold text-red-600 mb-1">【返程】2月22日 (成都转机)</p>
+                                <p>东方航空 MU5769 | 14:20 腾冲T2 ➔ 16:10 天府T2</p>
+                                <p class="mt-1 text-gray-500 font-bold bg-white inline-block px-2 py-0.5 rounded border border-red-200">中转停留 1h50m</p>
+                                <p class="mt-1">吉祥航空 HO1060 | 18:00 天府T2 ➔ 20:30 浦东T2</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Beijing Group -->
+                    <div>
+                        <h5 class="text-lg font-bold text-palette-dark bg-gray-100 inline-block px-3 py-1 rounded mb-3">北京组 (2人)</h5>
+                        <div class="space-y-3 text-sm text-gray-700">
+                            <div class="p-3 bg-blue-50 rounded-lg border border-blue-100">
+                                <p class="font-bold text-blue-600 mb-1">【去程】2月17日 (重庆转机)</p>
+                                <p>国航 CA1409 | 16:00 首都T3 ➔ 18:40 江北T3</p>
+                                <p class="mt-1 text-gray-500 font-bold bg-white inline-block px-2 py-0.5 rounded border border-blue-200">中转停留 1h55m</p>
+                                <p class="mt-1">昆明航 KY3110 | 20:35 江北T3 ➔ 23:00 芒市</p>
+                            </div>
+                            <div class="p-3 bg-blue-50 rounded-lg border border-blue-100">
+                                <p class="font-bold text-blue-600 mb-1">【返程】2月22日 (成都转机)</p>
+                                <p>四川航空 3U6684 | 16:50 腾冲T2 ➔ 18:25 天府T2</p>
+                                <p class="mt-1 text-gray-500 font-bold bg-white inline-block px-2 py-0.5 rounded border border-blue-200">中转停留 2h05m</p>
+                                <p class="mt-1">四川航空 3U6879 | 20:30 天府T2 ➔ 23:15 首都T2</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cars Card -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 border-t-4 border-palette-teal">
+                    <h4 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">🚗</span> 租车订单</h4>
+                    
+                    <!-- Car A -->
+                    <div class="mb-6">
+                        <h5 class="text-lg font-bold text-palette-dark bg-gray-100 inline-block px-3 py-1 rounded mb-3">主力后勤车 (Car A)</h5>
+                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200 text-sm text-gray-700 space-y-2">
+                            <p><span class="font-bold text-gray-500">车型：</span>大众帕萨特 (1.4T 自动 B级轿车)</p>
+                            <p><span class="font-bold text-gray-500">司机：</span>@丹哥</p>
+                            <p><span class="font-bold text-gray-500">周期：</span>5天 (2.17 16:00 ➔ 2.22 16:00)</p>
+                            <p><span class="font-bold text-gray-500">取车：</span>芒市机场服务点</p>
+                            <p><span class="font-bold text-gray-500">还车：</span>腾冲驼峰机场自助点</p>
+                            <p><span class="font-bold text-gray-500">保障：</span>尊享服务 (全额车损)</p>
+                        </div>
+                    </div>
+
+                    <!-- Car B -->
+                    <div>
+                        <h5 class="text-lg font-bold text-palette-dark bg-gray-100 inline-block px-3 py-1 rounded mb-3">突击支援车 (Car B)</h5>
+                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200 text-sm text-gray-700 space-y-2">
+                            <p><span class="font-bold text-gray-500">车型：</span>丰田卡罗拉锐放 (SUV)</p>
+                            <p><span class="font-bold text-gray-500">司机：</span>@曹博士</p>
+                            <p><span class="font-bold text-gray-500">周期：</span>3天 (2.19 13:30 ➔ 2.22 13:30)</p>
+                            <p><span class="font-bold text-gray-500">取车：</span>芒市枕晴山观景美宿 (店员送车上门)</p>
+                            <p><span class="font-bold text-gray-500">还车：</span>腾冲驼峰机场停车场 (店员上门取车)</p>
+                            <p><span class="font-bold text-gray-500">保障：</span>尊享保障 (车损全额免赔含轮胎，150万三者)</p>
+                            <p><span class="font-bold text-gray-500">退改：</span><span class="text-green-600 font-bold">2月19日 09:30 前可免费取消</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center text-gray-400 py-8 mt-8">
+            <p>Made for the "P-Person" Squad ❤️ Enjoy Yunnan!</p>
+        </footer>
+
+    </main>
+
+    <script>
+        const logisticsCtx = document.getElementById('logisticsChart').getContext('2d');
+        
+        new Chart(logisticsCtx, {
+            type: 'bar',
+            data: {
+                labels: [
+                    '🛫 上海组航班',
+                    '🛫 北京组航班',
+                    '🚗 Car A (后勤车)',
+                    '🚙 Car B (突击车)',
+                    '📍 在 芒市 (逛吃逛吃)',
+                    '📍 在 瑞丽 (边境风情)',
+                    '📍 在 腾冲 (温泉别墅)'
+                ],
+                datasets: [
+                    {
+                        label: '阶段一 / 入境与主要行程',
+                        data: [
+                            [new Date('2026-02-17T11:05'), new Date('2026-02-17T15:30')],
+                            [new Date('2026-02-17T16:00'), new Date('2026-02-17T23:00')],
+                            [new Date('2026-02-17T16:00'), new Date('2026-02-22T16:00')],
+                            [new Date('2026-02-19T13:30'), new Date('2026-02-22T13:30')],
+                            [new Date('2026-02-17T15:30'), new Date('2026-02-19T14:00')],
+                            [new Date('2026-02-19T15:20'), new Date('2026-02-20T14:00')],
+                            [new Date('2026-02-20T16:30'), new Date('2026-02-22T12:00')]
+                        ],
+                        backgroundColor: [
+                            '#9CA3AF', '#9CA3AF', '#374151', '#4B5563', '#FF6B6B', '#4ECDC4', '#FFE66D'
+                        ],
+                        borderRadius: 6,
+                        barThickness: 28,
+                        grouped: false
+                    },
+                    {
+                        label: '阶段二 / 返程离境',
+                        data: [
+                            [new Date('2026-02-22T14:20'), new Date('2026-02-22T20:30')],
+                            [new Date('2026-02-22T16:50'), new Date('2026-02-22T23:15')],
+                            null, 
+                            null, 
+                            null, 
+                            null, 
+                            null
+                        ],
+                        backgroundColor: '#9CA3AF',
+                        borderRadius: 6,
+                        barThickness: 28,
+                        grouped: false
+                    }
+                ]
+            },
+            options: {
+                indexAxis: 'y',
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        type: 'time',
+                        time: {
+                            unit: 'day',
+                            displayFormats: {
+                                day: 'MM月dd日'
+                            }
+                        },
+                        min: new Date('2026-02-17T06:00'),
+                        max: new Date('2026-02-23T02:00'),
+                        grid: { color: '#f3f4f6' },
+                        stacked: false
+                    },
+                    y: {
+                        grid: { display: false },
+                        stacked: true
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) return label.join(' ');
+                                return label;
+                            },
+                            label: function(context) {
+                                if (!context.raw) return null;
+                                const start = new Date(context.raw[0]).toLocaleTimeString('zh-CN', {month:'short', day:'numeric', hour: '2-digit', minute:'2-digit'});
+                                const end = new Date(context.raw[1]).toLocaleTimeString('zh-CN', {month:'short', day:'numeric', hour: '2-digit', minute:'2-digit'});
+                                return `${start} ➔ ${end}`;
+                            }
+                        }
+                    },
+                    legend: { display: false }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
